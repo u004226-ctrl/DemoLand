@@ -3,21 +3,22 @@
 /* --- Общие стили и базовые настройки --- */
 * {
     /* Добавляем box-sizing для более предсказуемой работы с размерами и отступами */
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #121212;
-    background: linear-gradient(90deg, #001f3f, #000000);
+    background: linear-gradient(to right, #4a90e2, #388e3c);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     color: white;
     /* Уменьшаем отступ для мобильных, чтобы контент занимал больше места */
-    padding: 2%; 
+    padding: 0;
+    margin: 0;
     /* Используем 100vh для более стабильной высоты на мобильных браузерах */
-    min-height: 100vh; 
+    min-height: 100vh;
 }
 
 .container {
@@ -32,19 +33,22 @@ body {
 
 /* --- Стили для Header (Шапка) --- */
 header {
-    grid-area: header;
-    padding: 1rem; /* Чуть меньше паддинг */
+    position: relative; /* Убедитесь, что у вас задано соответствующее позиционирование, если нужно */
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 0;
+    padding: 2%; /* Убираем внутренние отступы */
+    margin: 0%; /* Убираем внешние отступы */
     text-align: center;
-    border-radius: 25px; /* Уменьшаем радиус для лучшего вида на мобильных */
-    margin: 10px 0; /* Уменьшаем отступы по вертикали, убираем горизонтальные */
-    background: rgba(25, 25, 25, 0.8);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(25, 25, 25, 0.3); /* Полупрозрачный фон */
+    box-sizing: border-box; /* Убеждаемся, что padding не влияет на размеры */
 }
+
 
 header img {
     /* Увеличиваем размер логотипа для лучшей видимости на мобильных */
-    width: 40%; 
+    width: 40%;
     max-width: 150px; /* Ограничиваем максимальный размер */
 }
 
@@ -52,21 +56,22 @@ header img {
 main {
     display: grid;
     /* На больших экранах: 2 колонки, на мобильных: 1 колонка */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-area: main;
-    padding: 10px 0;
-    gap: 20px; /* Уменьшаем отступ между блоками */
+    padding: 30px 0;
+    gap: 4%; /* Уменьшаем отступ между блоками */
+    padding: 3%;
+    margin: 2%;
 }
 
 main p {
-    color: #ccc;
     line-height: 1.6;
-    margin-top: 0; /* Убираем лишний отступ сверху */
 }
+
 
 /* --- Стили для Lite_Cont (Карточка контента) --- */
 .lite_cont {
-    background: rgba(25, 25, 25, 0.7);
+    background: rgba(25, 25, 25, 0.3);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 25px; /* Уменьшаем радиус */
@@ -75,6 +80,7 @@ main p {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
+
 }
 
 /* --- Стили для ashki (Ссылки) --- */
@@ -95,7 +101,7 @@ a {
     text-align: center;
     transition: background-color 0.3s ease;
     /* Увеличиваем шрифт для лучшего нажатия на мобильных */
-    font-size: 1.1em; 
+    font-size: 1.1em;
 }
 
 
@@ -112,44 +118,30 @@ img {
 
 /* --- Стили для Footer (Подвал) --- */
 footer {
-    background: rgba(25, 25, 25, 0.7);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 25px; /* Уменьшаем радиус */
-    padding: 20px; /* Уменьшаем отступ */
+    position: relative; /* Убедитесь, что у вас задано соответствующее позиционирование, если нужно */
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 0;
+    padding: 3%; /* Убираем внутренние отступы */
+    margin: 0%; /* Убираем внешние отступы */
     text-align: center;
-    margin: 10px 0;
+    background: rgba(25, 25, 25, 0.3); /* Полупрозрачный фон */
+    box-sizing: border-box; /* Убеждаемся, что padding не влияет на размеры */
 }
+
+
 
 /* --- Медиазапрос для мобильных устройств (экраны до 768px) --- */
 @media (max-width: 768px) {
-    
-    body {
-        /* Делаем отступы еще меньше на совсем маленьких экранах */
-        padding: 1%; 
-    }
-
-    header {
-        /* Убираем внешние отступы для максимальной ширины */
-        margin: 5px 0; 
-        padding: 15px;
-    }
-
-    /* Главный контент будет автоматически в 1 колонку благодаря minmax(300px, 1fr) 
-       и уменьшению общего отступа */
     main {
         padding: 10px 0;
         gap: 15px;
     }
-    
+
     .lite_cont {
         padding: 15px; /* Меньше внутренний отступ для карточек */
         border-radius: 15px;
     }
 
-    footer {
-        margin: 5px 0;
-        padding: 15px;
-        border-radius: 15px;
-    }
 }
