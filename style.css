@@ -1,14 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+/* --- Общие стили и базовые настройки --- */
+* {
+    /* Добавляем box-sizing для более предсказуемой работы с размерами и отступами */
+    box-sizing: border-box; 
+}
+
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #121212; /* Темный фон на случай, если картинка не загрузится */
-    background-image: url("img/background.jpg"); /* Путь к фону относительно CSS-файла */
-    background-size: cover; /* Растягивает изображение на весь экран */
-    background-position: center; /* Центрирует изображение */
-    background-attachment: fixed; /* Фиксирует фон при прокрутке */
+    background-color: #121212;
+    background-image: url("img/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: white;
-    padding: 5%;
+    /* Уменьшаем отступ для мобильных, чтобы контент занимал больше места */
+    padding: 2%; 
+    /* Используем 100vh для более стабильной высоты на мобильных браузерах */
+    min-height: 100vh; 
 }
 
 .container {
@@ -17,61 +26,64 @@ body {
         "header"
         "main"
         "footer";
-    min-height: 100%;
+    /* Убираем min-height: 100% отсюда, т.к. он перенесен в body */
     grid-template-rows: auto 1fr auto;
 }
 
+/* --- Стили для Header (Шапка) --- */
 header {
     grid-area: header;
-    background-color: #333;
-    padding: 1.5rem;
+    padding: 1rem; /* Чуть меньше паддинг */
     text-align: center;
-    border-radius: 55px;
-    margin: 20px;
+    border-radius: 25px; /* Уменьшаем радиус для лучшего вида на мобильных */
+    margin: 10px 0; /* Уменьшаем отступы по вертикали, убираем горизонтальные */
     background: rgba(25, 25, 25, 0.8);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 header img {
-    width: 20%;
-
+    /* Увеличиваем размер логотипа для лучшей видимости на мобильных */
+    width: 40%; 
+    max-width: 150px; /* Ограничиваем максимальный размер */
 }
 
+/* --- Стили для Main (Основной контент) --- */
 main {
     display: grid;
-    /* Адаптивная сетка: 3 колонки на больших экранах, 2 на средних, 1 на мобильных */
-    grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+    /* На больших экранах: 2 колонки, на мобильных: 1 колонка */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     grid-area: main;
-    padding: 5%;
-    gap: 5%; /* Расстояние между блоками */
+    padding: 10px 0;
+    gap: 20px; /* Уменьшаем отступ между блоками */
 }
 
 main p {
     color: #ccc;
-    line-height: 1.6; /* Улучшаем читаемость текста */
+    line-height: 1.6;
+    margin-top: 0; /* Убираем лишний отступ сверху */
 }
 
+/* --- Стили для Lite_Cont (Карточка контента) --- */
 .lite_cont {
     background: rgba(25, 25, 25, 0.7);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 55px;
-    padding: 10%;
-    text-align: left; /* Текст теперь слева для лучшей читаемости */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход для hover-эффекта */
+    border-radius: 25px; /* Уменьшаем радиус */
+    padding: 20px; /* Уменьшаем отступ внутри карточки */
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
 }
 
-
-/* Стили для блока со ссылками на скачивание */
+/* --- Стили для ashki (Ссылки) --- */
 .ashki {
     display: flex;
-    flex-direction: column; /* Располагаем ссылки в столбик */
-    gap: 10%; /* Расстояние между ссылками */
-    margin-top: auto; /* Прижимает блок ссылок к низу карточки */
-    padding-top: 5%;
+    flex-direction: column;
+    gap: 10px; /* Уменьшаем расстояние между ссылками */
+    margin-top: auto;
+    padding-top: 15px;
 }
 
 a {
@@ -82,31 +94,62 @@ a {
     border-radius: 8px;
     text-align: center;
     transition: background-color 0.3s ease;
+    /* Увеличиваем шрифт для лучшего нажатия на мобильных */
+    font-size: 1.1em; 
 }
 
 
-
+/* --- Стили для изображений --- */
 img {
-    width: 100%; /* Картинка занимает всю ширину блока */
-    border-radius: 55px;
-    margin-bottom: 15px;
+    width: 100%;
+    border-radius: 25px; /* Уменьшаем радиус */
+    margin-bottom: 10px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    aspect-ratio: 16 / 9; /* Делаем все картинки одинаковыми по пропорциям */
-    object-fit: cover; /* Масштабирует картинку, чтобы она заполнила блок без искажений */
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
 }
 
 
+/* --- Стили для Footer (Подвал) --- */
 footer {
     background: rgba(25, 25, 25, 0.7);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 55px;
-    padding: 5%;
-    text-align: left; /* Текст теперь слева для лучшей читаемости */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход для hover-эффекта */
-    display: flex;
-    flex-direction: column;
-    margin: 5%;
+    border-radius: 25px; /* Уменьшаем радиус */
+    padding: 20px; /* Уменьшаем отступ */
     text-align: center;
+    margin: 10px 0;
 }
 
+/* --- Медиазапрос для мобильных устройств (экраны до 768px) --- */
+@media (max-width: 768px) {
+    
+    body {
+        /* Делаем отступы еще меньше на совсем маленьких экранах */
+        padding: 1%; 
+    }
+
+    header {
+        /* Убираем внешние отступы для максимальной ширины */
+        margin: 5px 0; 
+        padding: 15px;
+    }
+
+    /* Главный контент будет автоматически в 1 колонку благодаря minmax(300px, 1fr) 
+       и уменьшению общего отступа */
+    main {
+        padding: 10px 0;
+        gap: 15px;
+    }
+    
+    .lite_cont {
+        padding: 15px; /* Меньше внутренний отступ для карточек */
+        border-radius: 15px;
+    }
+
+    footer {
+        margin: 5px 0;
+        padding: 15px;
+        border-radius: 15px;
+    }
+}
