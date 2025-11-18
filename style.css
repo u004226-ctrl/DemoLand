@@ -17,7 +17,7 @@ body {
         "header"
         "main"
         "footer";
-    min-height: 100vh;
+    min-height: 100%;
     grid-template-rows: auto 1fr auto;
 }
 
@@ -41,10 +41,10 @@ header img {
 main {
     display: grid;
     /* Адаптивная сетка: 3 колонки на больших экранах, 2 на средних, 1 на мобильных */
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
     grid-area: main;
-    padding: 20px;
-    gap: 20px; /* Расстояние между блоками */
+    padding: 5%;
+    gap: 5%; /* Расстояние между блоками */
 }
 
 main p {
@@ -69,9 +69,9 @@ main p {
 .ashki {
     display: flex;
     flex-direction: column; /* Располагаем ссылки в столбик */
-    gap: 10px; /* Расстояние между ссылками */
+    gap: 10%; /* Расстояние между ссылками */
     margin-top: auto; /* Прижимает блок ссылок к низу карточки */
-    padding-top: 20px;
+    padding-top: 5%;
 }
 
 a {
