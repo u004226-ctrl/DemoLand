@@ -135,13 +135,9 @@ footer {
 /* --- Медиазапрос для мобильных устройств (экраны до 768px) --- */
 @media (max-width: 768px) {
     main {
-        padding: 10px 0;
-        gap: 15px;
+        margin-bottom: 125%;
+
     }
 
-    .lite_cont {
-        padding: 15px; /* Меньше внутренний отступ для карточек */
-        border-radius: 15px;
-    }
 
 }
