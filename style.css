@@ -133,6 +133,11 @@ footer {
 
     }
 
+    a {
+        padding: 1%;
+
+    }
+
     .lite_cont img {
         width: 100%;
         padding: 8%;
