@@ -14,19 +14,18 @@ body {
     color: white;
     padding: 0;
     margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
 }
 
-.container {
-    display: grid;
-    grid-template-areas:
-        "header"
-        "main"
-        "footer";
-    grid-template-rows: auto 1fr auto;
-}
+
 
 header {
-    background-color: black;
+    background-color: #0d0d0d; /* Темный основной цвет */
+    background: linear-gradient(to right, #1a252f, #22303f); /* Более темные оттенки для градиента */
     top: 0;
     left: 0;
     width: 100%;
@@ -36,24 +35,14 @@ header {
 
 }
 
-
 header img {
     width: 40%;
     max-width: 150px;
 }
 
-main {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-area: main;
-    padding: 30px 0;
-    gap: 3%;
-    padding: 3%;
-    margin: 2%;
-}
 
-main p {
-    line-height: 1.6;
+main {
+    padding: 5%;
 }
 
 
@@ -65,23 +54,41 @@ main p {
     padding: 20px;
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
 
+    display: flex;
+    padding: 5%;
+    gap: 30%;
+
+    margin: 5%;
+
+}
+
+
+.lite_cont img {
+    width: 40%;
+    border-radius: 25px;
+
+}
+
+.text-div {
+    width: 40%;
+
+}
+
+
+main p {
+    line-height: 1.6;
 }
 
 .ashki {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-top: auto;
-    padding-top: 15px;
 }
 
 a {
     color: white;
     text-decoration: none;
-    padding: 10px;
+    padding: 2%;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     text-align: center;
@@ -90,25 +97,20 @@ a {
 }
 
 
-img {
-    width: 100%;
-    border-radius: 25px;
-    margin-bottom: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-}
+
+
+
 
 
 footer {
-    background-color: black;
-    top: 0;
-    left: 0;
+    background-color: #0d0d0d;
+    background: linear-gradient(to right, #1a252f, #22303f);
     width: 100%;
-    margin-top: 5%;
     padding: 3%;
     text-align: center;
+    margin-top: auto;
 }
+
 
 
 
@@ -116,19 +118,26 @@ footer {
     header {
         padding: 6%;
         font-size: 120%;
-        margin-bottom: 20%;
-
-    }
-    main {
-        margin-bottom: 100%;
 
     }
 
-
-    footer {
-        margin-top: 190%;
-        padding: 5%;
+    .lite_cont {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
 
     }
+
+    .text-div {
+        width: 100%;
+        padding: 10%;
+
+    }
+
+    .lite_cont img {
+        width: 100%;
+
+    }
+
 
 }
