@@ -1,203 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DemoLand</title>
+    <link rel="icon" href="img/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>DemoLand</h1>
+        <p>Играй с нами!</p>
+    </header>
 
-* {
-    box-sizing: border-box;
-}
+    <main>
+        <div class="lite_cont">
+            <div class="text-div">
+                <h2>О игре</h2>
+                <p>DemoLand — это динамичный шутер, где ваша реакция и тактика решают исход битвы. Сражайтесь на уникальных картах, оттачивайте мастерство и станьте легендой арены!</p>
+            </div>
+            <div class="separator"></div>
+            <img src="img/maps.jpg" alt="Геймплей игры">
+        </div>
 
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #1a1a1a;
-    background: linear-gradient(to right, #2c3e50, #34495e);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    color: white;
-    padding: 0;
-    margin: 0;
+        <div class="lite_cont">
+            <div class="text-div">
+                <h2>Ключевые особенности</h2>
+                <p>Вас ждет арсенал футуристического оружия, система кастомизации персонажей и несколько захватывающих игровых режимов. Мы против читерства — только честная игра!</p>
+            </div>
+            <div class="separator"></div>
+            <img src='img/skins.jpg' alt="Особенности игры">
 
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-
-}
-
-
-
-header {
-    background-color: #0d0d0d; /* Темный основной цвет */
-    background: linear-gradient(to right, #1a252f, #22303f); /* Более темные оттенки для градиента */
-    top: 0;
-    left: 0;
-    width: 100%;
-    margin-top: 0;
-    padding: 3%;
-    text-align: center;
-
-}
+        </div>
 
 
 
-main {
-    padding: 5%;
-}
+        <div class="lite_cont">
+            <div class="text-div">
+                <h2>Наш Telegram</h2>
+                <p>Мы активно присутствуем в Telegram, где делимся новостями, обновлениями и интересным контентом. Присоединяйтесь к нашему сообществу!</p>
+                <a href="https://t.me/demollendindie" target="_blank">Telegram</a>
+            </div>
+            <div class="separator"></div>
+            <img src='img/telegram.png' alt="Особенности игры">
 
 
-.lite_cont {
-
-    background: rgba(25, 25, 25, 0.3);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 25px;
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-    display: flex;
-    gap: 20rem;
-
-    padding: 5%;
-    margin: 5%;
+        </div>
 
 
-}
+    </main>
 
 
-.lite_cont img {
-    width: 40%;
-    height: auto;
-    border-radius: 25px;
-    aspect-ratio: 16 / 9;
-
-}
-
-.text-div {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    gap: 6%;
-
-}
+    <footer>
+        <p>&copy; 2025 DemoLand</p>
+    </footer>
 
 
-main p {
-    line-height: 1.6;
-}
-
-a {
-    color: white;
-    text-decoration: none;
-    padding: 2%;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    text-align: center;
-    transition: background-color 0.3s ease;
-    font-size: 1.1em;
-}
-
-
-.separator {
-    display: none;
-}
-
-
-footer {
-    background-color: #0d0d0d;
-    background: linear-gradient(to right, #1a252f, #22303f);
-    width: 100%;
-    padding: 3%;
-    text-align: center;
-    margin-top: auto;
-}
-
-
-@media (max-width: 1500px) {
-    .lite_cont {
-        flex-direction: row;
-        gap: 2rem;
-        padding: 3%;
-        margin: 3%;
-    }
-
-    .text-div {
-        width: 50%;
-    }
-
-    .lite_cont img {
-        width: 45%;
-        max-width: 100%; /* Гарантирует, что изображение не выйдет за границы */
-        aspect-ratio: 16 / 9;
-    }
-
-    header, main {
-        padding: 4%;
-    }
-}
-
-
-
-
-
-@media max-width: 1024px {
-    .lite_cont {
-        flex-direction: row;
-        gap: 2rem;
-        padding: 3%;
-        margin: 3%;
-    }
-    .text-div {
-        width: 50%;
-    }
-    .lite_cont img {
-        width: 45%;
-        max-width: 100%; /* Гарантирует, что изображение не выйдет за границы */
-        aspect-ratio: 16 / 9;
-    }
-    header, main {
-        padding: 4%;
-    }
-}
-
-
-
-
-@media (max-width: 965px) {
-    header {
-        padding: 6%;
-        font-size: 120%;
-
-    }
-
-    main {
-        padding: 8%;
-    }
-
-    .lite_cont {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        gap: 100%;
-
-        height: 100%;
-
-
-
-    }
-
-    .text-div {
-        width: 100%;
-        gap: 10%;
-
-    }
-
-    .lite_cont img {
-        width: auto;
-        width: auto;
-    }
-
-
-    .separator {
-        display: block;
-        padding: 5%;
-    }
-
-
-}
+</body>
+</html>
