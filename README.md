@@ -28,7 +28,7 @@ demoland/
 │── img/                  # Game images (maps, skins, etc.)
 │   ├── logo.ico          # Gameplay screenshot
 │   ├── maps.jpg         # Character skins
-│   └── skins.jpg      # Telegram promo image
+│   |── skins.jpg      # Telegram promo image
 │   └── telegram.png      # Telegram promo image
 │── index.html            # Main HTML file
 └── style.css             # Styling for the website
