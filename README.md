@@ -26,8 +26,9 @@ Join our **Telegram** community for the latest news, updates, and exclusive cont
 ```
 demoland/
 │── img/                  # Game images (maps, skins, etc.)
-│   ├── maps.jpg          # Gameplay screenshot
-│   ├── skins.jpg         # Character skins
+│   ├── logo.ico          # Gameplay screenshot
+│   ├── maps.jpg         # Character skins
+│   └── skins.jpg      # Telegram promo image
 │   └── telegram.png      # Telegram promo image
 │── index.html            # Main HTML file
 └── style.css             # Styling for the website
